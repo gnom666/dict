@@ -22,8 +22,8 @@ import lombok.ToString;
  * @author jorge.rios
  *
  */
-@Getter(AccessLevel.PUBLIC)
-@Setter(AccessLevel.PUBLIC)
+@Getter
+@Setter
 @NoArgsConstructor
 @ToString
 public class Dictamination {

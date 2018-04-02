@@ -18,20 +18,23 @@ public class Main {
 		String dictZip = "/Users/jorge.rios/Work/Corpus/dictaminations.zip";
 		String scriptZip = "/Users/jorge.rios/Work/Corpus/scripts.zip";
 		
-		String secondCorpusDir = "/Users/jorge.rios/Work/Corpus/descomp2/";
-		String dictDir2 = "/Users/jorge.rios/Work/Corpus/dictamination2/";
-		String scriptDir2 = "/Users/jorge.rios/Work/Corpus/script2/";
+		String secondCorpusDir = "/Users/edelolmo/dev/nlp/mexico-nlp-corpora/mexican-constitutional/not_classified/";					// Ruta del corpus feo
+		String dictDir2 = "/Users/edelolmo/dev/nlp/mexico-nlp-corpora/mexican-constitutional/dictamination/";			// Pone los dictámenes
+		String scriptDir2 = "/Users/edelolmo/dev/nlp/mexico-nlp-corpora/mexican-constitutional/script/";				// Pone las escrituras
 		String dictZip2 = "/Users/jorge.rios/Work/Corpus/dictaminations2.zip";
 		String scriptZip2 = "/Users/jorge.rios/Work/Corpus/scripts2.zip";
+
+
+
 		
 		General gral = new General();
 		Dictamination dict = new Dictamination();
 		
 		// create destination directories
-		gral.createDirs(dictDir, scriptDir);
+		//gral.createDirs(dictDir, scriptDir);
 		gral.createDirs(dictDir2, scriptDir2);
 		
-		// make a first pass unzipping the zip files
+		/* make a first pass unzipping the zip files
 		gral.displayDirectoryContents(new File(originalDir));
 		gral.getDirectories().forEach(dir->{
 			dir.getFiles().forEach(file->{
@@ -66,12 +69,13 @@ public class Main {
 				gral.copyFile(biggest, scriptDir + gral.extractName(newName));
 			}	else
 				System.out.println("EMPTY DIR: " + dir);
-		});
+		});*/
 		
 		
 		// analize second corpus
-		gral.getDirectories().clear();
+		//gral.getDirectories().clear();
 		gral.displayDirectoryContents(new File(secondCorpusDir));
+		gral.getDirectories().get(0).sort();
 		System.out.println(gral.getDirectories());
 		
 		for (int i = 0; i < gral.getDirectories().get(0).getFiles().size()-1; i++) {
@@ -97,10 +101,12 @@ public class Main {
 		
 		
 		// compress the created and filled directories
+		/*
 		gral.zipDirectory(dictDir, dictZip);
 		gral.zipDirectory(scriptDir, scriptZip);
 		gral.zipDirectory(dictDir2, dictZip2);
 		gral.zipDirectory(scriptDir2, scriptZip2);
+		//*/
 		
 	}
 
