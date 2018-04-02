@@ -26,7 +26,7 @@ public class MyDirectory {
 		Collections.sort(files, new Comparator<MyFile>() {
 			   public int compare(MyFile obj1, MyFile obj2) {
 			      return obj1.getName().compareTo(obj2.getName());
-			   }
+			   }  
 			});
 		
 		return this;
